@@ -1,5 +1,6 @@
-#### JavaScript类型
-答：Number/Null/Undefined/Boolean/String/Symbol/Object
+JavaScript类型
+==============
+Number/Null/Undefined/Boolean/String/Symbol/Object
 
 #### 为什么有的编程规范要求用 void 0 代替 undefined?
 答：undefined表示未定义，而且它并不是关键字，为了避免被无意的篡改，所以建议使用void 0来获取undefined值
@@ -31,4 +32,39 @@ var symbol = Symbol('my symbol')
 在JavaScript标准中，规定了ToPrimitive函数，它是对象类型到基本类型的转换
 对象到String和Number的转换会遵循"先拆箱再转换"的规则。通过拆箱转换，把对象转为基本类型，再从基本类型转为对应的String或Number
 拆箱转换会尝试调用valueOf和toString来获取拆箱后的基本类型。若valueOf和ToString都不存在，或没有返回基本类型，则会产生类型错误TypeError
+
+JavaScript对象
+==============
+
+#### JavaScript标准对给予对象定义
+答：语言和宿主的基础设施由对象来提供，并且JavaScript程序即是一系列互相通讯的对象集合
+
+#### 面向对象
+
+#### JavaScript对象的特征
+* 对象具有唯一标识性：即使两个完全相同的对象，也并非同一个对象
+* 对象有状态：对象具有状态，同一对象可能处于不同状态之下
+* 对象具有行为：即对象的状态，可能因为它的行为产生变迁
+
+`JavaScript中对象独有的特色是：`对象具有高度的活跃性，因为JavaScript赋予了使用者在运行时为对象添改状态和行为的能力
+
+#### JavaScript对象的两类属性
+答：数据属性、访问器属性
+
+##### 数据属性的特征：
+* value: 属性的值
+* writable: 决定属性能否被赋值
+* enumerable: 决定for in能否枚举该属性
+* configurable: 决定该属性能否被删除或改变特征值
+
+##### 访问器属性的特征：
+* getter: 函数或undefined，在取属性值时被调用
+* setter: 函数或undefined，在设置属性值时被调用
+* enumerable: 决定for in能否枚举该属性
+* configurable: 决定该属性能否被删除或改变特征值
+
+`查看数据属性：` 内置函数Object.getOwnPropertyDescripter
+
+`改变属性特征或定义访问器属性：` 内置函数Object.defineProperty
+
 
