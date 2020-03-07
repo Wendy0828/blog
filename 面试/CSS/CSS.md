@@ -1,15 +1,16 @@
 #### 盒模型：
-答：页面渲染时，dom元素所采用的布局模型。可通过box-sizing进行设置，根据计算宽高的区域可分为context-box(W3C标准盒模型，盒子大小 = content + border + padding + margin)、border-box(IE盒模型，盒子大小 = width(content + border + padding ) + margin)
+答：页面渲染时，dom元素所采用的布局模型。可通过box-sizing进行设置，根据计算宽高的区域可分为content-box(W3C标准盒模型，盒子大小 = content + border + padding + margin)、border-box(IE盒模型，盒子大小 = width(content + border + padding ) + margin)
 
 #### BFC:
 答：块级格式化上下文，是一个独立的渲染区域，让处于BFC内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响
 ##### 触发条件：
 * float !== none 
 * position !== static/relative 
-* display: inline-block/table-cell/flex/table-caption/inflex-flex 
+* display: inline-block/table-cell/flex/table-caption/inline-flex 
 * overflow !== visible
+
 ##### 作用：
-* 利用BFC避免margin重叠 
+* 避免margin重叠   
 * 自适应两栏布局 
 * 清除浮动 
 ##### 规则： 
@@ -32,21 +33,21 @@
 ##### 水平居中: 
 * 行内元素(text-align: center) 
 * 块级元素(margin: 0 auto) 
-* absoulte+transform 
-* flex+justify-content:center
+* absoulte: absoulte + left: 50% + transform: translateX(-50%) 
+* display: flex + justify-content: center
 ##### 垂直居中: 
-* line-height:height 
-*absolute+transform 
-* flex+align-items:center 
+* line-height: height 
+* position: absolute + top: 50% + transform: translateY(-50%) 
+* display： flex + align-items: center 
 * table
 ##### 水平垂直居中： 
-* absoulte+transform 
-* flex+justify-centent+align-items
+* position: absoulte + top: 50% + left: 50% + transform: translate(-50%, -50%) 
+* dislpay: flex + justify-centent: center + align-items: center
 
 #### 选择器优先级：
 答：!important > 内联样式 > ID选择器 > 类选择器 = 伪类选择器 = 属性选择器 > 元素选择器 > 通配选择器
 
-#### 去除浮动影响，防止父级高度塌陷
+#### 清除浮动影响，防止父级高度塌陷
 * 通过增加尾元素清除浮动(:after/br/clear:both) 
 * 创建父级BFC 
 * 父级设置高度
