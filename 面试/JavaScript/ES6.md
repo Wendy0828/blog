@@ -11,7 +11,7 @@
 * 解构赋值：允许按照一定的模式，从数组和对象中提取值，对变量进行赋值
 * for..of循环：遍历数组、Set和Map结构、某些类似数组的对象、以及字符串等
 * Modules(模块, 如import, export)：将JS代码分隔成不同功能的小块进行模块化，将不同功能的代码分别写在不同的文件中，各模块只需导出公共接口的部分，然后通过模块的导入就可以在其他地方使用
-* Set()和Map()数据结构：类似数组，所有的数据都是唯一的，没有重复值。它本身就是一个构造函数
+* Set()数据结构：类似数组，所有的数据都是唯一的，没有重复值。它本身就是一个构造函数
 * 修饰器@decorator：一个函数，用来修改类甚至方法的行为，修饰器本质就是编译时执行的函数
 * ES6中的类(class)：不再像ES5一样使用原型链实现继承，而是引入Class这个概念
 * async/await：搭配promise，可以通过编写形式同步的代码来处理异步流程，提高代码的简洁性和可读性，async用于声明一个function是异步的，而await用于等待一个异步方法执行完成
@@ -118,4 +118,8 @@ Math.max(...arr);
 
 #### ES6中let块作用域是怎么实现的
 答：可以通过闭包自执行函数实现块作用域
+
+#### 操作数组常用的方法
+* ES5：concat 、join 、push、pop、shift、unshift、slice、splice、substring 和 substr 、sort、 reverse、indexOf 和 lastIndexOf 、every、some、filter、map、forEach、reduce
+* ES6：find、findIndex、fill、copyWithin、Array.from、Array.of、entries、values、key、includes
 
