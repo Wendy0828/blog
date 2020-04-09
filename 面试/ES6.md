@@ -75,7 +75,7 @@ class Person {
 当pending为reject时，会进入catch
 
 #### Promise中reject和catch处理上有什么区别
-* reject是用来抛出异常的，catch是用来出来异常的
+* reject是用来抛出异常的，catch是用来处理异常的
 * reject是Promise的方法，catch是Promise实例的方法
 * reject后的东西，一定会进入then中的第二个回调，如果then中没有写第二个回调，则进入catch
 * 网络异常(比如断网)，会直接进入catch而不会进入到then的第二个回调

@@ -127,7 +127,8 @@
 答：通过Object.defineProperty()来劫持各个属性的getter/setter，数据变动时发送消息给订阅者，触发相应的监听回调
 
 #### vue-router 的实现原理，history 和 hash 模式有什么区别？
-答：vue-router有两种模式，hash模式和history模式
+答：更新视图但不重新请求页面。
+vue-router有两种模式，hash模式和history模式，通过mode参数控制路由的实现模式
 * hash模式：url带#的，#后面是hash值，它的变化会触发hashchange事件
 * history模式：
     * 切换历史状态：back/forward/go

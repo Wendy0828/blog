@@ -10,7 +10,7 @@
 * 实例.__proto__ === 原型
 * 原型.constructor === 构造函数
 * 构造函数.prototype === 原型
-* 实例.constructor === 构造 函数
+* 实例.constructor === 构造函数
 
 #### __proto__：
 * 对象特有
@@ -239,20 +239,6 @@ function throttle(fn, wait, immediate){
     * apply: fn.apply(target, [1, 2])
     * bind: fn.bind(target)(1, 2)
 
-#### ES6/ES7:
-* 声明
-    * let/const：块级作用域、不存在变量提升、暂时性死区、不允许重复声明
-    * const：声明常量、无法修改
-* 解构赋值
-* class/extend：类声明与继承
-* Set/Map：新的数据类型
-* 异步解决方案：
-    * Promise的使用与实现
-    * generator:
-        * yield: 暂停代码
-        * next(): 继续执行代码
-        * await/async：generator的语法糖，babel中基于promise实现
-
 #### AST：
 答：抽象语法树(Abstract Syntax Tree)，是将代码逐字母解析成树桩对象的形式。这是语言之间的转换、代码语法检查、代码风格检查、代码格式化、代码高亮、代码错误提示、代码自动补全等等的基础
 
@@ -265,7 +251,7 @@ function throttle(fn, wait, immediate){
 答：在一个函数中，首先填充几个参数，然后再返回一个新的函数的技术，称为函数的柯理化。通常可用于在不侵入函数的前提下，为函数预置通用参数，供多次重复调用
 
 #### 数组：
-* map：遍历数组，返回回调返回值组成的新数组
+* map：遍历数组，返回值组成的新数组
 * forEach：无法break，可以用try/catch中throw new Error来停止
 * filter: 过滤
 * some：有一项返回true，则整体为true
@@ -348,4 +334,76 @@ function dropHash(url) {
 * 所有的引用类型(数组、对象、函数)，__proto__属性值指向它的构造函数的'prototype'属性值
 * 当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的__proto__(即它的构造函数的prototype)中寻找
 
+#### this
+* 定义：this要在执行时才能确认值，定义时无法确认 
+* 使用场景：
+    * 作为构造函数执行
+    * 作为对象属性执行 
+    * 作为普通函数执行
+    * apply/call/bind
 
+#### 闭包
+* 使用场景:
+    * 函数作为返回值
+    * 函数作为参数传递
+
+#### 异步 && 同步
+答：区别：同步会阻塞代码执行，而异步不会；alert是同步，setTimeout是异步
+##### 异步使用场景
+* 定时任务: setTimeout setInverval
+* 网络请求: ajax请求 动态<img>加载
+* 事件绑定
+
+#### 数组API
+* forEach 遍历所有元素
+* every 判断所有元素是否都符合条件
+* some 判断是否有至少一个元素符合条件
+* sort 排序
+* map 对元素重新组装，生成新数组
+* filter 过滤符合条件的元素
+
+#### 对象API
+* for in 
+
+` JS(浏览器执行的JS) = JS基础知识(ECMA262标准) + JS-Web-API(W3C标准)`
+<br>
+
+#### DOM(Document Object Model)
+* DOM基本的数据结构是树
+* DOM操作的常用API:
+    * 获取DOM节点，以及节点的property和Attribute
+        * getElementById/getElementsByTagName/getElementsByClassName/querySelectorAll/getAttribute
+    * 获取父节点，获取子节点
+        * parentElement/childNodes
+    * 新增节点，删除节点
+        * appendChild/createElement/removeChild
+* DOM节点的attr和property区别:
+    * property: 只是一个JS对象的属性的修改
+    * Attribute: 是对html标签属性的修改
+
+#### BOM(Bower Object Model)
+* 检测浏览器类型: navigator.userAgent
+```javascript
+var ua = navigator.userAgent
+var isChrome = ua.indexOf('Chrome')
+console.log(isChrome)
+```
+* 解析URL的各部分
+    * window.location.href 整个url字符串
+    * window.location.protocol url的协议部分
+    * window.location.host url的主机部分
+    * window.location.port url的端口部分
+    * window.location.pathname url的路径部分
+    * window.location.search url的查询部分
+    * window.location.hash url锚点
+
+#### 事件
+* 通用事件绑定
+    * addEventListener
+    * IE低版本 attachEvent
+* 事件冒泡
+* 代理
+
+* 编写一个通用的事件监听函数 addEventListener
+* 描述事件冒泡流程
+* 对于一个无限下拉加载图片的页面，如何给每个图片绑定事件
